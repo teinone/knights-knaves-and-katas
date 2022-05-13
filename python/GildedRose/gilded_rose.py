@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from python.GildedRose.item_classes import Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem
-
+from time import sleep
 
 class GildedRose(object):
     """ """
@@ -19,7 +19,7 @@ class GildedRose(object):
         self.normal_item_max_quality = 50
 
     def update_quality(self):
-        print(f"Items before: {self.items}")
+        print(f"Items before: {self.items}")  # TODO: remove
         for item in self.items:
             # Check product type is registered in the catalog
             if item.__class__ not in self.catalog:
@@ -36,7 +36,8 @@ class GildedRose(object):
                 validate_item_quality(item, item.min_quality, item.max_quality)
                 item.update_item_quality()
 
-        print(f"Items after: {self.items}")
+        print(f"Items after : {self.items}")  # TODO: remove
+        sleep(0.1)  # TODO: remove (used for pretty printing)
 
 
 def update_normal_item_quality(item: Item, item_min_quality: int):
