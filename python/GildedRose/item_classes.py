@@ -35,6 +35,8 @@ class AbstractItem(Item, abc.ABC):
 
 
 class Sulfuras(AbstractItem):
+    """Sulfuras is a legendary item and as such its Quality is 80 and it never
+    alters and never has to be sold"""
     def __init__(self, name: str, sell_in: Union[None, int] = None, quality: int = 80):
         super().__init__(name, sell_in, quality)
         if quality != 80:
@@ -43,12 +45,11 @@ class Sulfuras(AbstractItem):
         self.min_quality: int = 80
 
     def update_item_quality(self):
-        """Sulfuras is a legendary item and as such its Quality is 80 and it never
-        alters and never has to be sold"""
         pass
 
 
 class AgedItem(AbstractItem):
+    """Aged Items actually increases in Quality the older they get"""
     def update_item_quality(self):
         if self.quality < self.max_quality:
             self.quality += 1
@@ -57,10 +58,10 @@ class AgedItem(AbstractItem):
 
 
 class BackstagePass(AbstractItem):
-    def update_item_quality(self):
-        """Backstage passes, increases in Quality as its SellIn value approaches;
+    """Backstage passes, increases in Quality as its SellIn value approaches;
         Quality increases by 2 when there are 10 days or less and by 3
         when there are 5 days or less but Quality drops to 0 after the concert """
+    def update_item_quality(self):
         if self.sell_in <= 0:
             self.quality = 0
         else:
@@ -76,8 +77,8 @@ class BackstagePass(AbstractItem):
 
 
 class ConjuredItem(AbstractItem):
+    """Conjured items degrade in Quality twice as fast as normal Items"""
     def update_item_quality(self):
-        """Conjured items degrade in Quality twice as fast as normal Items"""
         expired: bool = True if self.sell_in < 0 else False
         new_quality: int = self.quality - 2
         if expired:

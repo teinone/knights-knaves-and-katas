@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """ """
-from python.GildedRose.item_classes import Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem
 import logging
 import sys
+from python.GildedRose.item_classes import Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem
 
 # Set this to logging.INFO to prevent printing before/after inventory
 LOGGING_LEVEL = logging.DEBUG
@@ -68,6 +68,6 @@ def validate_item_quality(item: Item, min_quality: int, max_quality: int):
     if item.quality < min_quality:
         raise ValueError(f"Item Quality {item.quality} below minimum {min_quality},"
                          f" error in item {item}")
-    elif item.quality > max_quality:
+    if item.quality > max_quality:
         raise ValueError(f"Item Quality {item.quality} above maximum {max_quality},"
                          f" error in item {item}")

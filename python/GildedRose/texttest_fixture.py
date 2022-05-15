@@ -19,11 +19,11 @@ if __name__ == "__main__":
             ConjuredItem(name="Conjured Mana Cake", sell_in=3, quality=6),  # <-- :O
             ]
 
-    days = 30
+    DAYS = 30
     import sys
     if len(sys.argv) > 1:
-        days = int(sys.argv[1]) + 1
-    for day in range(days):
+        DAYS = int(sys.argv[1]) + 1
+    for day in range(DAYS):
         print("-------- day %s --------" % day, flush=True)
         print("name, sellIn, quality", flush=True)
         for item in items:

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """ """
-from python.GildedRose.gilded_rose import GildedRose, Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem, \
-    validate_item_quality, LOGGING_LEVEL
 import logging
 import sys
 import unittest
+from python.GildedRose.gilded_rose import GildedRose, Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem, \
+    validate_item_quality, LOGGING_LEVEL
 
 logger = logging.getLogger("test_gilded_rose")
 logger.addHandler(logging.StreamHandler(sys.stdout))  # TODO: change to log to external file
@@ -219,14 +219,14 @@ class GildedRoseTest(unittest.TestCase):
     def test_10_days(self):
         logger.debug(f"{LINESEP1}TEST: Items and Special Items have the right Quality after 10 days {LINESEP2}")
         items = [Item("Boring Boar", 8, 15),
-                 AgedItem(f"Overripe Bombastic Brie", -2, MAXQ-9),
+                 AgedItem("Overripe Bombastic Brie", -2, MAXQ-9),
                  BackstagePass("Meet the Gremlins on May 24", 12, 10),
                  ConjuredItem("Conjured Capybara", 5, 40),
                  Sulfuras("Common Legendary Sulfuras", None, 80)
                  ]
         gilded_rose = GildedRose(items)
         # Run 10 days
-        for i in range(10):
+        for _i in range(10):
             gilded_rose.update_quality()
         self.assertEqual(str(items[0]), "Boring Boar, -2, 4",
                          msg="Normal item decrementation not OK at 10 days")
