@@ -6,6 +6,7 @@ import unittest
 from python.gilded_rose.gilded_rose import GildedRose, Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem, \
     validate_item_quality, LOGGING_LEVEL
 
+LOGGING_LEVEL = logging.DEBUG  # Override logging level from main module
 logger = logging.getLogger("test_gilded_rose")
 logger.addHandler(logging.StreamHandler(sys.stdout))  # TODO: change to log to external file
 logger.setLevel(LOGGING_LEVEL)  # Set in gilded_rose.py
