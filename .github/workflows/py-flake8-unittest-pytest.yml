@@ -35,7 +35,7 @@ jobs:
     
     - name: Test with Unittest (verbose)
       run: |
-        python -m -u unittest
+        python -u -m unittest
 
     - name: Test with pytest
       run: |
