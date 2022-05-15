@@ -1,8 +1,18 @@
 # -*- coding: utf-8 -*-
 from python.GildedRose.item_classes import Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem
 from time import sleep
+import logging
+import sys
 
-class GildedRose(object):
+# Set this to logging.INFO to prevent printing before/after inventory
+LOGGING_LEVEL = logging.DEBUG
+
+logger = logging.getLogger("gilded_rose")
+logger.addHandler(logging.StreamHandler(sys.stdout))  # TODO: change to log to external file
+logger.setLevel(LOGGING_LEVEL)
+
+
+class GildedRose:
     """ """
     def __init__(self, items):
         self.items = items  # DO NOT TOUCH
@@ -19,7 +29,7 @@ class GildedRose(object):
         self.normal_item_max_quality = 50
 
     def update_quality(self):
-        print(f"Items before: {self.items}")  # TODO: remove
+        logger.debug(f"Items before: {self.items}")
         for item in self.items:
             # Check product type is registered in the catalog
             if item.__class__ not in self.catalog:
@@ -36,8 +46,8 @@ class GildedRose(object):
                 validate_item_quality(item, item.min_quality, item.max_quality)
                 item.update_item_quality()
 
-        print(f"Items after : {self.items}")  # TODO: remove
-        sleep(0.1)  # TODO: remove (used for pretty printing)
+        logger.debug(f"Items after : {self.items}")
+        # sleep(0.1)  # TODO: HACK: Remove. Used as ducktape to prevent stdout buffer from printing out of order.
 
 
 def update_normal_item_quality(item: Item, item_min_quality: int):
@@ -46,7 +56,6 @@ def update_normal_item_quality(item: Item, item_min_quality: int):
         - If SellIn < 0, reduce Quality twice as fast"""
     expired: bool = True if item.sell_in < 0 else False
     new_quality: int = item.quality - 1
-
     if expired:
         new_quality -= 1
     # Ensure quality in never lower than minimum (default 0)
