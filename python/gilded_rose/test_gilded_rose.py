@@ -226,7 +226,7 @@ class GildedRoseTest(unittest.TestCase):
     def test_10_days(self):
         logger.debug(f"{LINESEP1}TEST: Items and Special Items have the right Quality after 10 days {LINESEP2}")
         items = [Item("Boring Boar", 8, 15),
-                 AgedItem("Overripe Bombastic Brie", 2, MAXQ-25),
+                 AgedItem("Ripe Bombastic Brie", 2, MAXQ-25),
                  AgedItem("Overripe Bombastic Brie", -2, MAXQ-18),
                  BackstagePass("Meet the Gremlins on May 24", 12, 10),
                  ConjuredItem("Conjured Capybara", 5, 40),
@@ -238,7 +238,7 @@ class GildedRoseTest(unittest.TestCase):
             gilded_rose.update_quality()
         self.assertEqual(str(items[0]), "Boring Boar, -2, 3",
                          msg="Normal Item decrementation not OK at 10 days")
-        self.assertEqual(str(items[1]), f"Overripe Bombastic Brie, -8, 43",
+        self.assertEqual(str(items[1]), f"Ripe Bombastic Brie, -8, 43",
                          msg="AgedItem incrementation not OK at 10 days")
         self.assertEqual(str(items[2]), f"Overripe Bombastic Brie, -12, {MAXQ}",
                          msg="AgedItem incrementation not OK at 10 days near maximum Quality")
