@@ -1,0 +1,121 @@
+Testing started at 18.09 ...
+Launching unittests with arguments python -m unittest X:/.../knights-knaves-and-katas/python/gilded_rose/test_gilded_rose.py in X:\...\knights-knaves-and-katas\python\gilded_rose
+
+Running tests, using Max Quality: 50, Min Quality 0
+
+=======================================================================
+TEST: Items and Special Items have the right Quality after 10 days 
+-----------------------------------------------------------------------
+Items before: [Boring Boar, 8, 15, Overripe Bombastic Brie, 2, 25, Overripe Bombastic Brie, -2, 32, Meet the Gremlins on May 24, 12, 10, Conjured Capybara, 5, 40, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, 7, 14, Overripe Bombastic Brie, 1, 26, Overripe Bombastic Brie, -3, 34, Meet the Gremlins on May 24, 11, 11, Conjured Capybara, 4, 38, Common Legendary Sulfuras, None, 80]
+Items before: [Boring Boar, 7, 14, Overripe Bombastic Brie, 1, 26, Overripe Bombastic Brie, -3, 34, Meet the Gremlins on May 24, 11, 11, Conjured Capybara, 4, 38, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, 6, 13, Overripe Bombastic Brie, 0, 27, Overripe Bombastic Brie, -4, 36, Meet the Gremlins on May 24, 10, 12, Conjured Capybara, 3, 36, Common Legendary Sulfuras, None, 80]
+Items before: [Boring Boar, 6, 13, Overripe Bombastic Brie, 0, 27, Overripe Bombastic Brie, -4, 36, Meet the Gremlins on May 24, 10, 12, Conjured Capybara, 3, 36, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, 5, 12, Overripe Bombastic Brie, -1, 29, Overripe Bombastic Brie, -5, 38, Meet the Gremlins on May 24, 9, 14, Conjured Capybara, 2, 34, Common Legendary Sulfuras, None, 80]
+Items before: [Boring Boar, 5, 12, Overripe Bombastic Brie, -1, 29, Overripe Bombastic Brie, -5, 38, Meet the Gremlins on May 24, 9, 14, Conjured Capybara, 2, 34, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, 4, 11, Overripe Bombastic Brie, -2, 31, Overripe Bombastic Brie, -6, 40, Meet the Gremlins on May 24, 8, 16, Conjured Capybara, 1, 32, Common Legendary Sulfuras, None, 80]
+Items before: [Boring Boar, 4, 11, Overripe Bombastic Brie, -2, 31, Overripe Bombastic Brie, -6, 40, Meet the Gremlins on May 24, 8, 16, Conjured Capybara, 1, 32, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, 3, 10, Overripe Bombastic Brie, -3, 33, Overripe Bombastic Brie, -7, 42, Meet the Gremlins on May 24, 7, 18, Conjured Capybara, 0, 30, Common Legendary Sulfuras, None, 80]
+Items before: [Boring Boar, 3, 10, Overripe Bombastic Brie, -3, 33, Overripe Bombastic Brie, -7, 42, Meet the Gremlins on May 24, 7, 18, Conjured Capybara, 0, 30, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, 2, 9, Overripe Bombastic Brie, -4, 35, Overripe Bombastic Brie, -8, 44, Meet the Gremlins on May 24, 6, 20, Conjured Capybara, -1, 28, Common Legendary Sulfuras, None, 80]
+Items before: [Boring Boar, 2, 9, Overripe Bombastic Brie, -4, 35, Overripe Bombastic Brie, -8, 44, Meet the Gremlins on May 24, 6, 20, Conjured Capybara, -1, 28, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, 1, 8, Overripe Bombastic Brie, -5, 37, Overripe Bombastic Brie, -9, 46, Meet the Gremlins on May 24, 5, 22, Conjured Capybara, -2, 24, Common Legendary Sulfuras, None, 80]
+Items before: [Boring Boar, 1, 8, Overripe Bombastic Brie, -5, 37, Overripe Bombastic Brie, -9, 46, Meet the Gremlins on May 24, 5, 22, Conjured Capybara, -2, 24, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, 0, 7, Overripe Bombastic Brie, -6, 39, Overripe Bombastic Brie, -10, 48, Meet the Gremlins on May 24, 4, 25, Conjured Capybara, -3, 20, Common Legendary Sulfuras, None, 80]
+Items before: [Boring Boar, 0, 7, Overripe Bombastic Brie, -6, 39, Overripe Bombastic Brie, -10, 48, Meet the Gremlins on May 24, 4, 25, Conjured Capybara, -3, 20, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, -1, 5, Overripe Bombastic Brie, -7, 41, Overripe Bombastic Brie, -11, 50, Meet the Gremlins on May 24, 3, 28, Conjured Capybara, -4, 16, Common Legendary Sulfuras, None, 80]
+Items before: [Boring Boar, -1, 5, Overripe Bombastic Brie, -7, 41, Overripe Bombastic Brie, -11, 50, Meet the Gremlins on May 24, 3, 28, Conjured Capybara, -4, 16, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, -2, 3, Overripe Bombastic Brie, -8, 43, Overripe Bombastic Brie, -12, 50, Meet the Gremlins on May 24, 2, 31, Conjured Capybara, -5, 12, Common Legendary Sulfuras, None, 80]
+PASS: Items and Special Item OK after 10 days
+
+=======================================================================
+TEST: AgedItem Quality increases with age, but doesn't exceed maximum 
+-----------------------------------------------------------------------
+Items before: [Bombastic Brie, 10, 8, Overripe Bombastic Brie, -2, 47, Ripe Bombastic Brie, 1, 10]
+Items after : [Bombastic Brie, 9, 9, Overripe Bombastic Brie, -3, 49, Ripe Bombastic Brie, 0, 11]
+Items before: [Bombastic Brie, 9, 9, Overripe Bombastic Brie, -3, 49, Ripe Bombastic Brie, 0, 11]
+Items after : [Bombastic Brie, 8, 10, Overripe Bombastic Brie, -4, 50, Ripe Bombastic Brie, -1, 13]
+Items before: [Bombastic Brie, 8, 10, Overripe Bombastic Brie, -4, 50, Ripe Bombastic Brie, -1, 13]
+Items after : [Bombastic Brie, 7, 11, Overripe Bombastic Brie, -5, 50, Ripe Bombastic Brie, -2, 15]
+PASS: AgedItem Quality tests
+
+=======================================================================
+TEST: BackstagePass Items handle Quality as expected 
+-----------------------------------------------------------------------
+Items before: [CavalryCon on May 30, 18, 10, CavalryCon on May 20, 8, 10, CavalryCon on May 15, 3, 10, CavalryCon on May 13, 1, 10, CavalryCon on May 12, 0, 10, CavalryCon in the past, -2, 10, CavalryCon Scalper Special, 1, 50]
+Items after : [CavalryCon on May 30, 17, 11, CavalryCon on May 20, 7, 12, CavalryCon on May 15, 2, 13, CavalryCon on May 13, 0, 13, CavalryCon on May 12, -1, 0, CavalryCon in the past, -3, 0, CavalryCon Scalper Special, 0, 50]
+PASS: BackstagePass Items handle Quality as expected
+
+=======================================================================
+TEST: Conjured Items handle Quality as expected 
+-----------------------------------------------------------------------
+Items before: [Conjured Confetti, 5, 20, Expired Conjured Confetti, -5, 20]
+Items after : [Conjured Confetti, 4, 18, Expired Conjured Confetti, -6, 16]
+PASS: Conjured Items handle Quality as expected
+
+=======================================================================
+TEST: Falsey object in items raises TypeError 
+-----------------------------------------------------------------------
+Items before: [Billable Bill, 5, 20, Expired Conjured Confetti, -5, 20, None]
+PASS: Falsey object in items raises TypeError
+
+=======================================================================
+TEST: Normal Item behaviour 1 day 
+-----------------------------------------------------------------------
+Items before: [Boring Boar, 10, 5]
+Items after : [Boring Boar, 9, 4]
+PASS: Normal Item 1 day
+
+=======================================================================
+TEST: Expired Item behaviour 1 day 
+-----------------------------------------------------------------------
+Items before: [Expired Excuse, -2, 10]
+Items after : [Expired Excuse, -3, 8]
+PASS: Expired Item 1 day
+
+=======================================================================
+TEST: Item Quality above maximum raises ValueError in validation 
+-----------------------------------------------------------------------
+PASS: Item Quality above maximum raises ValueError
+
+=======================================================================
+TEST: Item Quality below minimum raises ValueError in validation 
+-----------------------------------------------------------------------
+PASS: Item Quality below minimum raises ValueError
+
+=======================================================================
+TEST: Item behaviour when value is 0 
+-----------------------------------------------------------------------
+Items before: [Zero-value Zealot, 4, 0]
+Items after : [Zero-value Zealot, 3, 0]
+PASS: Item behaviour when value is 0
+
+=======================================================================
+TEST: Expired Item behaviour when value is 0 
+-----------------------------------------------------------------------
+Items before: [Expired Zero-value Zealot, -2, 0]
+Items after : [Expired Zero-value Zealot, -3, 0]
+PASS: Expired Item behaviour when value is 0
+
+=======================================================================
+TEST: Special items fail validation when Quality over maximum 
+-----------------------------------------------------------------------
+PASS: Special items fail validation when Quality over maximum
+
+=======================================================================
+TEST: Special items fail validation when Quality below minimum 
+-----------------------------------------------------------------------
+PASS: Special items fail validation when Quality below minimum
+
+=======================================================================
+TEST: Unregistered Item type raises TypeError (tests class validation) 
+-----------------------------------------------------------------------
+Items before: [Billable Bill, 5, 20, Expired Conjured Confetti, -5, 20, Cursed Curd, 5, 10]
+PASS: Unregistered Item type raises TypeError
+
+
+Ran 14 tests in 0.010s
+
+OK
+
+Process finished with exit code 0
