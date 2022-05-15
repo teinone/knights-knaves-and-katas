@@ -230,7 +230,7 @@ class GildedRoseTest(unittest.TestCase):
         # Run 10 days
         for _i in range(10):
             gilded_rose.update_quality()
-        self.assertEqual(str(items[0]), "Boring Boar, -2, 4",
+        self.assertEqual(str(items[0]), "Boring Boar, -2, 3",
                          msg="Normal Item decrementation not OK at 10 days")
         self.assertEqual(str(items[1]), f"Overripe Bombastic Brie, -8, 43",
                          msg="AgedItem incrementation not OK at 10 days")

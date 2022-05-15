@@ -53,7 +53,7 @@ def update_normal_item_quality(item: Item, item_min_quality: int):
     """Handle normal item behaviour:
         - reduce Quality and SellIn days.
         - If SellIn < 0, reduce Quality twice as fast"""
-    expired: bool = True if item.sell_in < 0 else False
+    expired: bool = True if item.sell_in <= 0 else False
     new_quality: int = item.quality - 1
     if expired:
         new_quality -= 1
