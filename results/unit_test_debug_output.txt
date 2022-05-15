@@ -1,3 +1,5 @@
+Ran with LOGGING_LEVEL = logging.DEBUG in both tests and gilded_rose.py
+
 Testing started at 18.09 ...
 Launching unittests with arguments python -m unittest X:/.../knights-knaves-and-katas/python/gilded_rose/test_gilded_rose.py in X:\...\knights-knaves-and-katas\python\gilded_rose
 
@@ -59,6 +61,11 @@ PASS: Conjured Items handle Quality as expected
 TEST: Falsey object in items raises TypeError 
 -----------------------------------------------------------------------
 Items before: [Billable Bill, 5, 20, Expired Conjured Confetti, -5, 20, None]
+Failed to update item at None. Exception: Unknown product type for item:None, <class 'NoneType'>
+Traceback (most recent call last):
+  File "X:\...\knights-knaves-and-katas\python\gilded_rose\gilded_rose.py", line 37, in update_quality
+    raise TypeError(f"Unknown product type for item:{item}, {item.__class__}")
+TypeError: Unknown product type for item:None, <class 'NoneType'>
 PASS: Falsey object in items raises TypeError
 
 =======================================================================
@@ -78,11 +85,21 @@ PASS: Expired Item 1 day
 =======================================================================
 TEST: Item Quality above maximum raises ValueError in validation 
 -----------------------------------------------------------------------
+Item Quality validation failed. Exception: Item Quality 52 above maximum 50, error in item Overqualified Onager, 10, 52
+Traceback (most recent call last):
+  File "X:\...\knights-knaves-and-katas\python\gilded_rose\gilded_rose.py", line 76, in validate_item_quality
+    raise ValueError(f"Item Quality {item.quality} above maximum {max_quality},"
+ValueError: Item Quality 52 above maximum 50, error in item Overqualified Onager, 10, 52
 PASS: Item Quality above maximum raises ValueError
 
 =======================================================================
 TEST: Item Quality below minimum raises ValueError in validation 
 -----------------------------------------------------------------------
+Item Quality validation failed. Exception: Item Quality -5 below minimum 0, error in item Negative Naga, 5, -5
+Traceback (most recent call last):
+  File "X:\...\knights-knaves-and-katas\python\gilded_rose\gilded_rose.py", line 73, in validate_item_quality
+    raise ValueError(f"Item Quality {item.quality} below minimum {min_quality},"
+ValueError: Item Quality -5 below minimum 0, error in item Negative Naga, 5, -5
 PASS: Item Quality below minimum raises ValueError
 
 =======================================================================
@@ -102,23 +119,64 @@ PASS: Expired Item behaviour when value is 0
 =======================================================================
 TEST: Special items fail validation when Quality over maximum 
 -----------------------------------------------------------------------
+Item Quality validation failed. Exception: Item Quality 90 above maximum 50, error in item Overrated Romano, 10, 90
+Traceback (most recent call last):
+  File "X:\...\knights-knaves-and-katas\python\gilded_rose\gilded_rose.py", line 76, in validate_item_quality
+    raise ValueError(f"Item Quality {item.quality} above maximum {max_quality},"
+ValueError: Item Quality 90 above maximum 50, error in item Overrated Romano, 10, 90
+Item Quality validation failed. Exception: Item Quality 65 above maximum 50, error in item Meet the Gremlins Weekend Pass, 10, 65
+Traceback (most recent call last):
+  File "X:\...\knights-knaves-and-katas\python\gilded_rose\gilded_rose.py", line 76, in validate_item_quality
+    raise ValueError(f"Item Quality {item.quality} above maximum {max_quality},"
+ValueError: Item Quality 65 above maximum 50, error in item Meet the Gremlins Weekend Pass, 10, 65
+Item Quality validation failed. Exception: Item Quality 52 above maximum 50, error in item Conjured Coveted Compote, 10, 52
+Traceback (most recent call last):
+  File "X:\...\knights-knaves-and-katas\python\gilded_rose\gilded_rose.py", line 76, in validate_item_quality
+    raise ValueError(f"Item Quality {item.quality} above maximum {max_quality},"
+ValueError: Item Quality 52 above maximum 50, error in item Conjured Coveted Compote, 10, 52
+Item Quality validation failed. Exception: Item Quality 80 above maximum 50, error in item Common Legendary Sulfuras, None, 80
+Traceback (most recent call last):
+  File "X:\...\knights-knaves-and-katas\python\gilded_rose\gilded_rose.py", line 76, in validate_item_quality
+    raise ValueError(f"Item Quality {item.quality} above maximum {max_quality},"
+ValueError: Item Quality 80 above maximum 50, error in item Common Legendary Sulfuras, None, 80
 PASS: Special items fail validation when Quality over maximum
 
 =======================================================================
 TEST: Special items fail validation when Quality below minimum 
 -----------------------------------------------------------------------
+Item Quality validation failed. Exception: Item Quality -5 below minimum 0, error in item Aged Milk, 10, -5
+Traceback (most recent call last):
+  File "X:\...\knights-knaves-and-katas\python\gilded_rose\gilded_rose.py", line 73, in validate_item_quality
+    raise ValueError(f"Item Quality {item.quality} below minimum {min_quality},"
+ValueError: Item Quality -5 below minimum 0, error in item Aged Milk, 10, -5
+Item Quality validation failed. Exception: Item Quality -4 below minimum 0, error in item Meet the Mother-In-Law, 10, -4
+Traceback (most recent call last):
+  File "X:\...\knights-knaves-and-katas\python\gilded_rose\gilded_rose.py", line 73, in validate_item_quality
+    raise ValueError(f"Item Quality {item.quality} below minimum {min_quality},"
+ValueError: Item Quality -4 below minimum 0, error in item Meet the Mother-In-Law, 10, -4
+Item Quality validation failed. Exception: Item Quality -52 below minimum 0, error in item Conjured Terrible Teriyaki, 10, -52
+Traceback (most recent call last):
+  File "X:\...\knights-knaves-and-katas\python\gilded_rose\gilded_rose.py", line 73, in validate_item_quality
+    raise ValueError(f"Item Quality {item.quality} below minimum {min_quality},"
+ValueError: Item Quality -52 below minimum 0, error in item Conjured Terrible Teriyaki, 10, -52
 PASS: Special items fail validation when Quality below minimum
 
 =======================================================================
 TEST: Unregistered Item type raises TypeError (tests class validation) 
 -----------------------------------------------------------------------
 Items before: [Billable Bill, 5, 20, Expired Conjured Confetti, -5, 20, Cursed Curd, 5, 10]
+Failed to update item at Cursed Curd, 5, 10. Exception: Unknown product type for item:Cursed Curd, 5, 10, <class 'test_gilded_rose.GildedRoseTest.test_unregistered_product.<locals>.CursedCurd'>
+Traceback (most recent call last):
+  File "X:\...\knights-knaves-and-katas\python\gilded_rose\gilded_rose.py", line 37, in update_quality
+    raise TypeError(f"Unknown product type for item:{item}, {item.__class__}")
+TypeError: Unknown product type for item:Cursed Curd, 5, 10, <class 'test_gilded_rose.GildedRoseTest.test_unregistered_product.<locals>.CursedCurd'>
 PASS: Unregistered Item type raises TypeError
 
 
-Ran 14 tests in 0.010s
+Ran 14 tests in 0.013s
 
 OK
 
 Process finished with exit code 0
+
 
