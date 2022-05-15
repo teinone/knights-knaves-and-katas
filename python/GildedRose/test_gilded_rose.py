@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from gilded_rose import GildedRose, Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem, \
+""" """
+from python.GildedRose.gilded_rose import GildedRose, Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem, \
     validate_item_quality, LOGGING_LEVEL
 import logging
 import sys
