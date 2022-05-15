@@ -5,7 +5,15 @@ view_program:subl
 diff_program:meld
 
 # Settings for the Python version
-#executable:${TEXTTEST_HOME}/python/texttest_fixture.py
-#interpreter:python
+executable:${TEXTTEST_HOME}/python/gilded_rose/texttest_fixture.py
+interpreter:python
 
 filename_convention_scheme:standard
+
+[batch_result_repository]
+ci:${TEXTTEST_HOME}/ci_results
+[end]
+
+[historical_report_location]
+ci:${TEXTTEST_HOME}/ci_reports
+[end]
