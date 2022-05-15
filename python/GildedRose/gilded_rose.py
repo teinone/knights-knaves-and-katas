@@ -47,7 +47,6 @@ class GildedRose:
                 item.update_item_quality()
 
         logger.debug(f"Items after : {self.items}")
-        # sleep(0.1)  # TODO: HACK: Remove. Used as ducktape to prevent stdout buffer from printing out of order.
 
 
 def update_normal_item_quality(item: Item, item_min_quality: int):

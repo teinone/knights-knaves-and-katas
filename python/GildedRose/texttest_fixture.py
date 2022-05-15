@@ -4,7 +4,7 @@ from __future__ import print_function
 from gilded_rose import *
 
 if __name__ == "__main__":
-    print ("OMGHAI!")
+    print ("OMGHAI!", flush=True)
     items = [
             Item(name="+5 Dexterity Vest", sell_in=10, quality=20),
             AgedItem(name="Aged Brie", sell_in=2, quality=0),
@@ -23,9 +23,9 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         days = int(sys.argv[1]) + 1
     for day in range(days):
-        print("-------- day %s --------" % day)
-        print("name, sellIn, quality")
+        print("-------- day %s --------" % day, flush=True)
+        print("name, sellIn, quality", flush=True)
         for item in items:
-            print(item)
-        print("")
+            print(item, flush=True)
+        print("", flush=True)
         GildedRose(items).update_quality()
