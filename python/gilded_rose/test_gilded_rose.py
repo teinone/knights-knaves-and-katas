@@ -3,7 +3,7 @@
 import logging
 import sys
 import unittest
-from python.GildedRose.gilded_rose import GildedRose, Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem, \
+from python.gilded_rose.gilded_rose import GildedRose, Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem, \
     validate_item_quality, LOGGING_LEVEL
 
 logger = logging.getLogger("test_gilded_rose")

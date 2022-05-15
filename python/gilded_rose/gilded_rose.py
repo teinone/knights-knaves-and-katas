@@ -2,7 +2,7 @@
 """ """
 import logging
 import sys
-from python.GildedRose.item_classes import Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem
+from python.gilded_rose.item_classes import Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem
 
 # Set this to logging.INFO to prevent printing before/after inventory
 LOGGING_LEVEL = logging.DEBUG
