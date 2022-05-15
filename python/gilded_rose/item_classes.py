@@ -80,7 +80,7 @@ class BackstagePass(AbstractItem):
 class ConjuredItem(AbstractItem):
     """Conjured items degrade in Quality twice as fast as normal Items"""
     def update_item_quality(self):
-        expired: bool = True if self.sell_in < 0 else False
+        expired: bool = True if self.sell_in <= 0 else False
         new_quality: int = self.quality - 2
         if expired:
             new_quality -= 2

@@ -5,7 +5,7 @@ import sys
 from python.gilded_rose.item_classes import Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem
 
 # Set this to logging.INFO to prevent printing before/after inventory
-LOGGING_LEVEL = logging.INFO
+LOGGING_LEVEL = logging.DEBUG
 
 logger = logging.getLogger("gilded_rose")
 logger.addHandler(logging.StreamHandler(sys.stdout))  # TODO: change to log to external file

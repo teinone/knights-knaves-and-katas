@@ -174,13 +174,19 @@ class GildedRoseTest(unittest.TestCase):
         logger.debug(f"{LINESEP1}TEST: Conjured Items handle Quality as expected {LINESEP2}")
         items = [
             ConjuredItem("Conjured Confetti", 5, 20),
+            ConjuredItem("Ripe Conjured Confetti", 1, 20),
             ConjuredItem("Expired Conjured Confetti", -5, 20)
                   ]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
         self.assertEqual(str(items[0]), "Conjured Confetti, 4, 18",
-                         msg="Normal conjured item decrementation not OK")
-        self.assertEqual(str(items[1]), "Expired Conjured Confetti, -6, 16",
+                         msg="Normal ConjuredItem decrementation not OK")
+        self.assertEqual(str(items[1]), "Ripe Conjured Confetti, 0, 18",
+                         msg="Expiring ConjuredItem decrementation not OK")
+        self.assertEqual(str(items[2]), "Expired Conjured Confetti, -6, 16",
+                         msg="Expired ConjuredItem decrementation not OK")
+        gilded_rose.update_quality()
+        self.assertEqual(str(items[1]), "Ripe Conjured Confetti, -1, 14",
                          msg="Expired conjured item decrementation not OK")
         logger.debug("PASS: Conjured Items handle Quality as expected")
 
@@ -238,7 +244,7 @@ class GildedRoseTest(unittest.TestCase):
                          msg="AgedItem incrementation not OK at 10 days near maximum Quality")
         self.assertEqual(str(items[3]), "Meet the Gremlins on May 24, 2, 31",
                          msg="BackstagePass incrementation not OK at 10 days")
-        self.assertEqual(str(items[4]), "Conjured Capybara, -5, 12",
+        self.assertEqual(str(items[4]), "Conjured Capybara, -5, 10",
                          msg="ConjuredItem decrementation not OK at 10 days")
         self.assertEqual(str(items[5]), "Common Legendary Sulfuras, None, 80",
                          msg="Sulfuras not OK at 10 days")
