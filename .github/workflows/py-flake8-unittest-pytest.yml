@@ -43,4 +43,4 @@ jobs:
 
     - name: Run TextTest cases
       run: |
-        python -m texttest -con
+        texttest -con
