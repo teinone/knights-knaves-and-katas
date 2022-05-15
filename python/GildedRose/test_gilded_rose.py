@@ -168,7 +168,6 @@ class GildedRoseTest(unittest.TestCase):
                          msg=f"Backstage Pass Quality not OK when {MAXQ}")
         logger.debug("PASS: BackstagePass Items handle Quality as expected")
 
-
     def test_conjured_item(self):
         """Conjured items should degrade twice as fast in quality as normal items"""
         logger.debug(f"{LINESEP1}TEST: Conjured Items handle Quality as expected {LINESEP2}")
