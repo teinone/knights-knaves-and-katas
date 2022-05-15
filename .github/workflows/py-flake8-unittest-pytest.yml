@@ -40,7 +40,3 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --log-format="%(asctime)s %(levelname)s %(message)s"
-
-    - name: Run TextTest cases
-      run: |
-        texttest -b ci -name `date`
