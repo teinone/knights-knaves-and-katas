@@ -17,15 +17,15 @@ Items after : [Boring Boar, 4, 11, Overripe Bombastic Brie, -2, 31, Overripe Bom
 Items before: [Boring Boar, 4, 11, Overripe Bombastic Brie, -2, 31, Overripe Bombastic Brie, -6, 40, Meet the Gremlins on May 24, 8, 16, Conjured Capybara, 1, 32, Common Legendary Sulfuras, None, 80]
 Items after : [Boring Boar, 3, 10, Overripe Bombastic Brie, -3, 33, Overripe Bombastic Brie, -7, 42, Meet the Gremlins on May 24, 7, 18, Conjured Capybara, 0, 30, Common Legendary Sulfuras, None, 80]
 Items before: [Boring Boar, 3, 10, Overripe Bombastic Brie, -3, 33, Overripe Bombastic Brie, -7, 42, Meet the Gremlins on May 24, 7, 18, Conjured Capybara, 0, 30, Common Legendary Sulfuras, None, 80]
-Items after : [Boring Boar, 2, 9, Overripe Bombastic Brie, -4, 35, Overripe Bombastic Brie, -8, 44, Meet the Gremlins on May 24, 6, 20, Conjured Capybara, -1, 28, Common Legendary Sulfuras, None, 80]
-Items before: [Boring Boar, 2, 9, Overripe Bombastic Brie, -4, 35, Overripe Bombastic Brie, -8, 44, Meet the Gremlins on May 24, 6, 20, Conjured Capybara, -1, 28, Common Legendary Sulfuras, None, 80]
-Items after : [Boring Boar, 1, 8, Overripe Bombastic Brie, -5, 37, Overripe Bombastic Brie, -9, 46, Meet the Gremlins on May 24, 5, 22, Conjured Capybara, -2, 24, Common Legendary Sulfuras, None, 80]
-Items before: [Boring Boar, 1, 8, Overripe Bombastic Brie, -5, 37, Overripe Bombastic Brie, -9, 46, Meet the Gremlins on May 24, 5, 22, Conjured Capybara, -2, 24, Common Legendary Sulfuras, None, 80]
-Items after : [Boring Boar, 0, 7, Overripe Bombastic Brie, -6, 39, Overripe Bombastic Brie, -10, 48, Meet the Gremlins on May 24, 4, 25, Conjured Capybara, -3, 20, Common Legendary Sulfuras, None, 80]
-Items before: [Boring Boar, 0, 7, Overripe Bombastic Brie, -6, 39, Overripe Bombastic Brie, -10, 48, Meet the Gremlins on May 24, 4, 25, Conjured Capybara, -3, 20, Common Legendary Sulfuras, None, 80]
-Items after : [Boring Boar, -1, 5, Overripe Bombastic Brie, -7, 41, Overripe Bombastic Brie, -11, 50, Meet the Gremlins on May 24, 3, 28, Conjured Capybara, -4, 16, Common Legendary Sulfuras, None, 80]
-Items before: [Boring Boar, -1, 5, Overripe Bombastic Brie, -7, 41, Overripe Bombastic Brie, -11, 50, Meet the Gremlins on May 24, 3, 28, Conjured Capybara, -4, 16, Common Legendary Sulfuras, None, 80]
-Items after : [Boring Boar, -2, 3, Overripe Bombastic Brie, -8, 43, Overripe Bombastic Brie, -12, 50, Meet the Gremlins on May 24, 2, 31, Conjured Capybara, -5, 12, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, 2, 9, Overripe Bombastic Brie, -4, 35, Overripe Bombastic Brie, -8, 44, Meet the Gremlins on May 24, 6, 20, Conjured Capybara, -1, 26, Common Legendary Sulfuras, None, 80]
+Items before: [Boring Boar, 2, 9, Overripe Bombastic Brie, -4, 35, Overripe Bombastic Brie, -8, 44, Meet the Gremlins on May 24, 6, 20, Conjured Capybara, -1, 26, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, 1, 8, Overripe Bombastic Brie, -5, 37, Overripe Bombastic Brie, -9, 46, Meet the Gremlins on May 24, 5, 22, Conjured Capybara, -2, 22, Common Legendary Sulfuras, None, 80]
+Items before: [Boring Boar, 1, 8, Overripe Bombastic Brie, -5, 37, Overripe Bombastic Brie, -9, 46, Meet the Gremlins on May 24, 5, 22, Conjured Capybara, -2, 22, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, 0, 7, Overripe Bombastic Brie, -6, 39, Overripe Bombastic Brie, -10, 48, Meet the Gremlins on May 24, 4, 25, Conjured Capybara, -3, 18, Common Legendary Sulfuras, None, 80]
+Items before: [Boring Boar, 0, 7, Overripe Bombastic Brie, -6, 39, Overripe Bombastic Brie, -10, 48, Meet the Gremlins on May 24, 4, 25, Conjured Capybara, -3, 18, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, -1, 5, Overripe Bombastic Brie, -7, 41, Overripe Bombastic Brie, -11, 50, Meet the Gremlins on May 24, 3, 28, Conjured Capybara, -4, 14, Common Legendary Sulfuras, None, 80]
+Items before: [Boring Boar, -1, 5, Overripe Bombastic Brie, -7, 41, Overripe Bombastic Brie, -11, 50, Meet the Gremlins on May 24, 3, 28, Conjured Capybara, -4, 14, Common Legendary Sulfuras, None, 80]
+Items after : [Boring Boar, -2, 3, Overripe Bombastic Brie, -8, 43, Overripe Bombastic Brie, -12, 50, Meet the Gremlins on May 24, 2, 31, Conjured Capybara, -5, 10, Common Legendary Sulfuras, None, 80]
 PASS: Items and Special Item OK after 10 days
 
 =======================================================================
@@ -49,8 +49,10 @@ PASS: BackstagePass Items handle Quality as expected
 =======================================================================
 TEST: Conjured Items handle Quality as expected 
 -----------------------------------------------------------------------
-Items before: [Conjured Confetti, 5, 20, Expired Conjured Confetti, -5, 20]
-Items after : [Conjured Confetti, 4, 18, Expired Conjured Confetti, -6, 16]
+Items before: [Conjured Confetti, 5, 20, Ripe Conjured Confetti, 1, 20, Expired Conjured Confetti, -5, 20]
+Items after : [Conjured Confetti, 4, 18, Ripe Conjured Confetti, 0, 18, Expired Conjured Confetti, -6, 16]
+Items before: [Conjured Confetti, 4, 18, Ripe Conjured Confetti, 0, 18, Expired Conjured Confetti, -6, 16]
+Items after : [Conjured Confetti, 3, 16, Ripe Conjured Confetti, -1, 14, Expired Conjured Confetti, -7, 12]
 PASS: Conjured Items handle Quality as expected
 
 =======================================================================
@@ -107,15 +109,16 @@ TEST: Special items fail validation when Quality below minimum
 -----------------------------------------------------------------------
 PASS: Special items fail validation when Quality below minimum
 
+
+Ran 14 tests in 0.009s
+
+OK
+
 =======================================================================
 TEST: Unregistered Item type raises TypeError (tests class validation) 
 -----------------------------------------------------------------------
 Items before: [Billable Bill, 5, 20, Expired Conjured Confetti, -5, 20, Cursed Curd, 5, 10]
 PASS: Unregistered Item type raises TypeError
 
-
-Ran 14 tests in 0.010s
-
-OK
-
 Process finished with exit code 0
+
