@@ -9,3 +9,11 @@ executable:${TEXTTEST_HOME}/python/gilded_rose/texttest_fixture.py
 interpreter:python
 
 filename_convention_scheme:standard
+
+[batch_result_repository]
+ci:${TEXTTEST_HOME}/ci_results
+[end]
+
+[historical_report_location]
+ci:${TEXTTEST_HOME}/ci_reports
+[end]
