@@ -1,4 +1,10 @@
-""" """
+"""This module holds all the Item classes. The superclass is still the legacy Item, but
+new classes should inherit from the new abstract class AbstractItem (or a class based
+on it), which in turn inherits from Item. As such, new item classes can have additional 
+properties and methods and can inherit from each other without altering the legacy class.
+However, all child classes should implement the update_item_quality(self) method, even if 
+just with a pass statement."""
+
 import abc
 from typing import Union
 
@@ -36,7 +42,7 @@ class AbstractItem(Item, abc.ABC):
 
 class Sulfuras(AbstractItem):
     """Sulfuras is a legendary item and as such its Quality is 80 and it never
-    alters and never has to be sold"""
+    alters and never has to be sold. """
     def __init__(self, name: str, sell_in: Union[None, int] = None, quality: int = 80):
         super().__init__(name, sell_in, quality)
         if quality != 80:
@@ -49,7 +55,7 @@ class Sulfuras(AbstractItem):
 
 
 class AgedItem(AbstractItem):
-    """Aged Items actually increases in Quality the older they .
+    """Aged Items actually increases in Quality the older they get.
        Once the sell by date has passed, Quality increases twice as fast."""
     def update_item_quality(self):
         new_quality: int = self.quality + 1 if self.sell_in > 0 else self.quality + 2
@@ -60,8 +66,10 @@ class AgedItem(AbstractItem):
 
 class BackstagePass(AbstractItem):
     """Backstage passes, increases in Quality as its SellIn value approaches;
-        Quality increases by 2 when there are 10 days or less and by 3
-        when there are 5 days or less but Quality drops to 0 after the concert """
+        Quality increases
+        by 2 when there are 10 days or less and 
+        by 3 when there are 5 days or less but 
+        Quality drops to 0 after the concert. """
     def update_item_quality(self):
         if self.sell_in <= 0:
             self.quality = 0
