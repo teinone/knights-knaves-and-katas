@@ -35,12 +35,8 @@ jobs:
     
     - name: Test with Unittest (verbose)
       run: |
-        python -m unittest
+        python -u -m unittest
 
     - name: Test with pytest
       run: |
         pytest --log-format="%(asctime)s %(levelname)s %(message)s"
-
-    - name: Run TextTest cases
-      run: |
-        texttest -b ci -name `date`
