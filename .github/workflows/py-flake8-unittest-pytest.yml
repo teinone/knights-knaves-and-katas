@@ -43,4 +43,4 @@ jobs:
 
     - name: Run TextTest cases
       run: |
-        texttest -con
+        texttest -b ci -name `date`
