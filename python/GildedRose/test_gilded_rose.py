@@ -28,7 +28,7 @@ class GildedRoseTest(unittest.TestCase):
         gilded_rose.update_quality()
         self.assertEqual(str(items[0]), "Boring Boar, 9, 4",
                          msg="Normal decrementation not OK")
-        logger.debug(f"PASS: Normal Item 1 day")
+        logger.debug("PASS: Normal Item 1 day")
 
     def test_normal_item_expired(self):
         logger.debug(f"{LINESEP1}TEST: Expired Item behaviour 1 day {LINESEP2}")
@@ -37,7 +37,7 @@ class GildedRoseTest(unittest.TestCase):
         gilded_rose.update_quality()
         self.assertEqual(str(items[0]), "Expired Excuse, -3, 8",
                          msg="Normal item expiry decrementation not OK")
-        logger.debug(f"PASS: Expired Item 1 day")
+        logger.debug("PASS: Expired Item 1 day")
 
     def test_normal_item_zero(self):
         logger.debug(f"{LINESEP1}TEST: Item behaviour when value is 0 {LINESEP2}")
@@ -46,7 +46,7 @@ class GildedRoseTest(unittest.TestCase):
         gilded_rose.update_quality()
         self.assertEqual(str(items[0]), "Zero-value Zealot, 3, 0",
                          msg="Normal item decrementation doesn't stop at zero")
-        logger.debug(f"PASS: Item behaviour when value is 0")
+        logger.debug("PASS: Item behaviour when value is 0")
 
     def test_normal_item_zero_expired(self):
         logger.debug(f"{LINESEP1}TEST: Expired Item behaviour when value is 0 {LINESEP2}")
@@ -63,7 +63,7 @@ class GildedRoseTest(unittest.TestCase):
         gilded_rose = GildedRose(items)
         self.assertRaises(ValueError, validate_item_quality,
                           *(items[0], gilded_rose.normal_item_min_quality, gilded_rose.normal_item_max_quality))
-        logger.debug(f"PASS: Item Quality above maximum raises ValueError")
+        logger.debug("PASS: Item Quality above maximum raises ValueError")
 
     def test_normal_item_quality_too_low(self):
         logger.debug(f"{LINESEP1}TEST: Item Quality below minimum raises ValueError in validation {LINESEP2}")
@@ -95,7 +95,7 @@ class GildedRoseTest(unittest.TestCase):
                          msg="Aged item incrementation not OK when expired and near maximum")
         self.assertEqual(str(items[2]), "Ripe Bombastic Brie, -2, 13",
                          msg="Aged item incrementation not OK when expired on third update")
-        logger.debug(f"PASS: AgedItem Quality tests")
+        logger.debug("PASS: AgedItem Quality tests")
 
     def test_quality_too_high_for_multiple_classes(self):
         """Check that qualities over the defined maximum raise a ValueError in validate_item_quality.
@@ -118,7 +118,7 @@ class GildedRoseTest(unittest.TestCase):
         self.assertRaises(ValueError, Sulfuras, *("Excessively Legendary Sulfuras", None, 84))
         self.assertEqual(str(items[-1]), "Common Legendary Sulfuras, None, 80",
                          msg="Sulfuras not handled properly. Is the items list okay?")
-        logger.debug(f"PASS: Special items fail validation when Quality over maximum")
+        logger.debug("PASS: Special items fail validation when Quality over maximum")
 
     def test_quality_too_low_for_special_classes(self):
         """Check that qualities under the defined class-level minimum raise a ValueError
@@ -134,7 +134,7 @@ class GildedRoseTest(unittest.TestCase):
         # gilded_rose = GildedRose(items)
         for item in items:
             self.assertRaises(ValueError, validate_item_quality, *(item, item.min_quality, item.max_quality))
-        logger.debug(f"PASS: Special items fail validation when Quality below minimum")
+        logger.debug("PASS: Special items fail validation when Quality below minimum")
 
     def test_backstage_pass(self):
         """Backstage passes, increases in Quality as its SellIn value approaches;
@@ -166,7 +166,7 @@ class GildedRoseTest(unittest.TestCase):
                          msg="Expired backstage pass value not 0")
         self.assertEqual(str(items[6]), f"CavalryCon Scalper Special, 0, {MAXQ}",
                          msg=f"Backstage Pass Quality not OK when {MAXQ}")
-        logger.debug(f"PASS: BackstagePass Items handle Quality as expected")
+        logger.debug("PASS: BackstagePass Items handle Quality as expected")
 
 
     def test_conjured_item(self):
@@ -182,7 +182,7 @@ class GildedRoseTest(unittest.TestCase):
                          msg="Normal conjured item decrementation not OK")
         self.assertEqual(str(items[1]), "Expired Conjured Confetti, -6, 16",
                          msg="Expired conjured item decrementation not OK")
-        logger.debug(f"PASS: Conjured Items handle Quality as expected")
+        logger.debug("PASS: Conjured Items handle Quality as expected")
 
     def test_unregistered_product(self):
         """ New Item types should be registered in the GildedRose.catalog property,
@@ -204,7 +204,7 @@ class GildedRoseTest(unittest.TestCase):
         ]
         gilded_rose = GildedRose(items)
         self.assertRaises(TypeError, gilded_rose.update_quality)
-        logger.debug(f"PASS: Unregistered Item type raises TypeError")
+        logger.debug("PASS: Unregistered Item type raises TypeError")
 
     def test_empty_item(self):
         logger.debug(f"{LINESEP1}TEST: Falsey object in items raises TypeError {LINESEP2}")
@@ -215,7 +215,7 @@ class GildedRoseTest(unittest.TestCase):
         ]
         gilded_rose = GildedRose(items)
         self.assertRaises(TypeError, gilded_rose.update_quality)
-        logger.debug(f"PASS: Falsey object in items raises TypeError")
+        logger.debug("PASS: Falsey object in items raises TypeError")
 
     def test_10_days(self):
         logger.debug(f"{LINESEP1}TEST: Items and Special Items have the right Quality after 10 days {LINESEP2}")
@@ -239,7 +239,7 @@ class GildedRoseTest(unittest.TestCase):
                          msg="Conjured item decrementation not OK at 10 days")
         self.assertEqual(str(items[4]), "Common Legendary Sulfuras, None, 80",
                          msg="Sulfuras not OK at 10 days")
-        logger.debug(f"PASS: Items and Special Item OK after 10 days")
+        logger.debug("PASS: Items and Special Item OK after 10 days")
 
 
 if __name__ == '__main__':

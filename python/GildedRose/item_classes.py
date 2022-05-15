@@ -86,5 +86,3 @@ class ConjuredItem(AbstractItem):
         self.quality = new_quality if not new_quality < self.min_quality else self.min_quality
 
         self.sell_in = self.sell_in - 1
-
-

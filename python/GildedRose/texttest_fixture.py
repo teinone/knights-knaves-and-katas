@@ -2,10 +2,10 @@
 """ """
 from __future__ import print_function
 
-from python.GildedRose.gilded_rose import *
+from python.GildedRose.gilded_rose import GildedRose, Item, AgedItem, Sulfuras, BackstagePass, ConjuredItem
 
 if __name__ == "__main__":
-    print ("OMGHAI!", flush=True)
+    print("OMGHAI!", flush=True)
     items = [
             Item(name="+5 Dexterity Vest", sell_in=10, quality=20),
             AgedItem(name="Aged Brie", sell_in=2, quality=0),
