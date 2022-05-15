@@ -49,11 +49,12 @@ class Sulfuras(AbstractItem):
 
 
 class AgedItem(AbstractItem):
-    """Aged Items actually increases in Quality the older they get"""
+    """Aged Items actually increases in Quality the older they .
+       Once the sell by date has passed, Quality increases twice as fast."""
     def update_item_quality(self):
-        if self.quality < self.max_quality:
-            self.quality += 1
-
+        new_quality: int = self.quality + 1 if self.sell_in > 0 else self.quality + 2
+        # Ensure quality in never above maximum (default 50)
+        self.quality = new_quality if not new_quality > self.max_quality else self.max_quality
         self.sell_in -= 1
 
 

@@ -78,7 +78,7 @@ class GildedRoseTest(unittest.TestCase):
         """Aged items actually increases in Quality the older it gets."""
         logger.debug(f"{LINESEP1}TEST: AgedItem Quality increases with age, but doesn't exceed maximum {LINESEP2}")
         items = [AgedItem("Bombastic Brie", 10, 8),
-                 AgedItem("Overripe Bombastic Brie", -2, MAXQ-2),
+                 AgedItem("Overripe Bombastic Brie", -2, MAXQ-3),
                  AgedItem("Ripe Bombastic Brie", 1, 10)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
@@ -93,8 +93,8 @@ class GildedRoseTest(unittest.TestCase):
         self.assertEqual(str(items[0]), "Bombastic Brie, 7, 11",
                          msg="Aged item incrementation not OK on third update")
         self.assertEqual(str(items[1]), f"Overripe Bombastic Brie, -5, {MAXQ}",
-                         msg="Aged item incrementation not OK when expired and near maximum")
-        self.assertEqual(str(items[2]), "Ripe Bombastic Brie, -2, 13",
+                         msg="Aged item incrementation not OK when expired and near maximum on third update")
+        self.assertEqual(str(items[2]), "Ripe Bombastic Brie, -2, 15",
                          msg="Aged item incrementation not OK when expired on third update")
         logger.debug("PASS: AgedItem Quality tests")
 
@@ -220,7 +220,8 @@ class GildedRoseTest(unittest.TestCase):
     def test_10_days(self):
         logger.debug(f"{LINESEP1}TEST: Items and Special Items have the right Quality after 10 days {LINESEP2}")
         items = [Item("Boring Boar", 8, 15),
-                 AgedItem("Overripe Bombastic Brie", -2, MAXQ-9),
+                 AgedItem("Overripe Bombastic Brie", 2, MAXQ-25),
+                 AgedItem("Overripe Bombastic Brie", -2, MAXQ-18),
                  BackstagePass("Meet the Gremlins on May 24", 12, 10),
                  ConjuredItem("Conjured Capybara", 5, 40),
                  Sulfuras("Common Legendary Sulfuras", None, 80)
@@ -230,14 +231,16 @@ class GildedRoseTest(unittest.TestCase):
         for _i in range(10):
             gilded_rose.update_quality()
         self.assertEqual(str(items[0]), "Boring Boar, -2, 4",
-                         msg="Normal item decrementation not OK at 10 days")
-        self.assertEqual(str(items[1]), f"Overripe Bombastic Brie, -12, {MAXQ}",
-                         msg="Aged item incrementation not OK at 10 days")
-        self.assertEqual(str(items[2]), "Meet the Gremlins on May 24, 2, 31",
-                         msg="Backstage pass incrementation not OK at 10 days")
-        self.assertEqual(str(items[3]), "Conjured Capybara, -5, 12",
-                         msg="Conjured item decrementation not OK at 10 days")
-        self.assertEqual(str(items[4]), "Common Legendary Sulfuras, None, 80",
+                         msg="Normal Item decrementation not OK at 10 days")
+        self.assertEqual(str(items[1]), f"Overripe Bombastic Brie, -8, 43",
+                         msg="AgedItem incrementation not OK at 10 days")
+        self.assertEqual(str(items[2]), f"Overripe Bombastic Brie, -12, {MAXQ}",
+                         msg="AgedItem incrementation not OK at 10 days near maximum Quality")
+        self.assertEqual(str(items[3]), "Meet the Gremlins on May 24, 2, 31",
+                         msg="BackstagePass incrementation not OK at 10 days")
+        self.assertEqual(str(items[4]), "Conjured Capybara, -5, 12",
+                         msg="ConjuredItem decrementation not OK at 10 days")
+        self.assertEqual(str(items[5]), "Common Legendary Sulfuras, None, 80",
                          msg="Sulfuras not OK at 10 days")
         logger.debug("PASS: Items and Special Item OK after 10 days")
 
