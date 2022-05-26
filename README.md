@@ -1,6 +1,7 @@
+# Refactoring Kata
+
 ![Cover Image](P1050633_small.JPG)
 
-# Refactoring Kata
 This is an implementation for Emily Bache's version of the original kata by Terry Hughes.
 
 The original repository [can be found here](https://github.com/emilybache/GildedRose-Refactoring-Kata).

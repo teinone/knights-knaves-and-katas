@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest texttest
+        pip install flake8 pytest texttest mypy
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
@@ -40,3 +40,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --log-format="%(asctime)s %(levelname)s %(message)s"
+        
+    - name: Run mypy
+      run: |
+        python -u -m mypy . --show-column-numbers
