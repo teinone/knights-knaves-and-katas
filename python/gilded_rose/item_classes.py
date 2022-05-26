@@ -7,6 +7,9 @@ just with a pass statement."""
 
 import abc
 from typing import Union
+import logging
+
+logger = logging.getLogger("gilded_rose")
 
 
 # Legacy superclass, do not touch under risk of mortal danger
@@ -26,7 +29,7 @@ class AbstractItem(Item, abc.ABC):
     Since each item type has its own quality evolution pattern, we create an abstract
     superclass for all items. This class provides the interface for all new subclasses
     without tampering with the Item class, while inheriting the properties of the legacy
-    Item class. The default properties of this class can be overriden in any subclass.
+    Item class. The default properties of this class can be overridden in any subclass.
     """
 
     def __init__(self, name, sell_in, quality):
@@ -46,7 +49,9 @@ class Sulfuras(AbstractItem):
     def __init__(self, name: str, sell_in: Union[None, int] = None, quality: int = 80):
         super().__init__(name, sell_in, quality)
         if quality != 80:
-            raise ValueError(f"The Quality for Sulfuras should always be 80, got {quality}!")
+            exc: ValueError = ValueError(f"The Quality for Sulfuras should always be 80, got {quality} for {name}!")
+            logger.exception(f"{exc}")
+            raise exc
         self.max_quality: int = 80
         self.min_quality: int = 80
 
@@ -95,4 +100,4 @@ class ConjuredItem(AbstractItem):
         # Ensure quality in never lower than minimum (default 0)
         self.quality = new_quality if not new_quality < self.min_quality else self.min_quality
 
-        self.sell_in = self.sell_in - 1
+        self.sell_in -= 1

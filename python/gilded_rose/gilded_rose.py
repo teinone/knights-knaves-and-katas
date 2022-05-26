@@ -34,7 +34,7 @@ class GildedRose:
             try:
                 # Check product type is registered in the catalog
                 if item.__class__ not in self.catalog:
-                    raise TypeError(f"Unknown product type for item:{item}, {item.__class__}")
+                    raise TypeError(f"Unknown product type for item: {item}, {item.__class__}")
 
                 # Wrap legacy behaviour of normal Items
                 if item.__class__ is Item:

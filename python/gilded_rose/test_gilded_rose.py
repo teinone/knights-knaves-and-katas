@@ -98,45 +98,6 @@ class GildedRoseTest(unittest.TestCase):
                          msg="Aged item incrementation not OK when expired on third update")
         logger.debug("PASS: AgedItem Quality tests")
 
-    def test_quality_too_high_for_multiple_classes(self):
-        """Check that qualities over the defined maximum raise a ValueError in validate_item_quality.
-        Sulfuras validates the quality in the Sulfuras constructor."""
-        logger.debug(f"{LINESEP1}TEST: Special items fail validation when Quality over maximum {LINESEP2}")
-        items = [
-                 AgedItem("Overrated Romano", 10, MAXQ+40),
-                 BackstagePass("Meet the Gremlins Weekend Pass", 10, MAXQ+15),
-                 ConjuredItem("Conjured Coveted Compote", 10, MAXQ+2),
-                 Sulfuras("Common Legendary Sulfuras", None, 80),  # NOTE POSITION IN LIST
-                 # Add new item types here
-                 ]
-        gilded_rose = GildedRose(items)
-        # Check general max quality (from gilded_rose)
-        for item in items:
-            self.assertRaises(ValueError, validate_item_quality,
-                              *(item, gilded_rose.normal_item_min_quality, gilded_rose.normal_item_max_quality))
-
-        # Check products with product-specific min and max qualities, i.e. Sulfuras
-        self.assertRaises(ValueError, Sulfuras, *("Excessively Legendary Sulfuras", None, 84))
-        self.assertEqual(str(items[-1]), "Common Legendary Sulfuras, None, 80",
-                         msg="Sulfuras not handled properly. Is the items list okay?")
-        logger.debug("PASS: Special items fail validation when Quality over maximum")
-
-    def test_quality_too_low_for_special_classes(self):
-        """Check that qualities under the defined class-level minimum raise a ValueError
-         in validate_item_quality. Sulfuras validates the quality in the Sulfuras constructor,
-         so it should not be added here."""
-        logger.debug(f"{LINESEP1}TEST: Special items fail validation when Quality below minimum {LINESEP2}")
-        items = [
-                 AgedItem("Aged Milk", 10, MINQ-5),
-                 BackstagePass("Meet the Mother-In-Law", 10, MINQ-4),
-                 ConjuredItem("Conjured Terrible Teriyaki", 10, MINQ-52),
-                 # Add new item types here
-                 ]
-        # gilded_rose = GildedRose(items)
-        for item in items:
-            self.assertRaises(ValueError, validate_item_quality, *(item, item.min_quality, item.max_quality))
-        logger.debug("PASS: Special items fail validation when Quality below minimum")
-
     def test_backstage_pass(self):
         """Backstage passes, increases in Quality as its SellIn value approaches;
         Quality increases by 2 when there are 10 days or less and by 3
@@ -222,6 +183,44 @@ class GildedRoseTest(unittest.TestCase):
         gilded_rose = GildedRose(items)
         self.assertRaises(TypeError, gilded_rose.update_quality)
         logger.debug("PASS: Falsey object in items raises TypeError")
+
+    def test_quality_too_high_for_special_items(self):
+        """Check that qualities over the defined maximum raise a ValueError in validate_item_quality.
+        Sulfuras validates the quality in the Sulfuras constructor."""
+        logger.debug(f"{LINESEP1}TEST: Special items fail validation when Quality over maximum {LINESEP2}")
+        items = [
+                 AgedItem("Overrated Romano", 10, MAXQ+40),
+                 BackstagePass("Meet the Gremlins Weekend Pass", 10, MAXQ+15),
+                 ConjuredItem("Conjured Coveted Compote", 10, MAXQ+2),
+                 Sulfuras("Common Legendary Sulfuras", None, 80),  # NOTE POSITION IN LIST
+                 # Add new item types here
+                 ]
+        gilded_rose = GildedRose(items)
+        # Check general max quality (from gilded_rose)
+        for item in items:
+            self.assertRaises(ValueError, validate_item_quality,
+                              *(item, gilded_rose.normal_item_min_quality, gilded_rose.normal_item_max_quality))
+
+        # Check products with product-specific max Qualities, i.e. Sulfuras
+        self.assertRaises(ValueError, Sulfuras, *("Excessively Legendary Sulfuras", None, 84))
+        logger.debug("PASS: Special items fail validation when Quality over maximum")
+
+    def test_quality_too_low_for_special_items(self):
+        """Check that qualities under the defined class-level minimum raise a ValueError
+         in validate_item_quality. Sulfuras validates the quality in the Sulfuras constructor,
+         so it should not be added here."""
+        logger.debug(f"{LINESEP1}TEST: Special items fail validation when Quality below minimum {LINESEP2}")
+        items = [
+                 AgedItem("Aged Milk", 10, MINQ-5),
+                 BackstagePass("Meet the Mother-In-Law", 10, MINQ-4),
+                 ConjuredItem("Conjured Terrible Teriyaki", 10, MINQ-52),
+                 # Add new item types here
+                 ]
+        for item in items:
+            self.assertRaises(ValueError, validate_item_quality, *(item, item.min_quality, item.max_quality))
+        # Test Sulfuras separately
+        self.assertRaises(ValueError, Sulfuras, *("Underwhelming Sulfuras", None, 40))
+        logger.debug("PASS: Special items fail validation when Quality below minimum")
 
     def test_10_days(self):
         logger.debug(f"{LINESEP1}TEST: Items and Special Items have the right Quality after 10 days {LINESEP2}")
