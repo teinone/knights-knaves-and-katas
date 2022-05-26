@@ -38,7 +38,7 @@ class AbstractItem(Item, abc.ABC):
         self.min_quality: int = 0
 
     @abc.abstractmethod
-    def update_item_quality(self):
+    def update_item_quality(self) -> None:
         """Note: this method should also implement the sell_by decrementation where applicable."""
         pass
 

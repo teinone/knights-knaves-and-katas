@@ -28,7 +28,7 @@ class GildedRose:
         self.normal_item_min_quality = 0
         self.normal_item_max_quality = 50
 
-    def update_quality(self):
+    def update_quality(self) -> None:
         logger.debug(f"Items before: {self.items}")
         for item in self.items:
             try:
@@ -52,21 +52,7 @@ class GildedRose:
         logger.debug(f"Items after : {self.items}")
 
 
-def update_normal_item_quality(item: Item, item_min_quality: int):
-    """Handle normal item behaviour:
-        - reduce Quality and SellIn days.
-        - If SellIn < 0, reduce Quality twice as fast"""
-    expired: bool = True if item.sell_in <= 0 else False
-    new_quality: int = item.quality - 1
-    if expired:
-        new_quality -= 1
-    # Ensure quality in never lower than minimum (default 0)
-    item.quality = new_quality if not new_quality < item_min_quality else item_min_quality
-
-    item.sell_in = item.sell_in - 1
-
-
-def validate_item_quality(item: Item, min_quality: int, max_quality: int):
+def validate_item_quality(item: Item, min_quality: int, max_quality: int) -> None:
     """Check that item Quality is within min and max range."""
     try:
         if item.quality < min_quality:
@@ -78,3 +64,17 @@ def validate_item_quality(item: Item, min_quality: int, max_quality: int):
     except ValueError as e:
         logger.exception(f"Item Quality validation failed. \n Exception: {e} \n")
         raise
+
+
+def update_normal_item_quality(item: Item, item_min_quality: int) -> None:
+    """Handle normal item behaviour:
+        - reduce Quality and SellIn days.
+        - If SellIn < 0, reduce Quality twice as fast"""
+    expired: bool = True if item.sell_in <= 0 else False
+    new_quality: int = item.quality - 1
+    if expired:
+        new_quality -= 1
+    # Ensure quality in never lower than minimum (default 0)
+    item.quality = new_quality if not new_quality < item_min_quality else item_min_quality
+
+    item.sell_in = item.sell_in - 1
