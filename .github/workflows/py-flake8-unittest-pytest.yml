@@ -43,4 +43,4 @@ jobs:
         
     - name: Run mypy
       run: |
-        python -u -m mypy --show-column-numbers
+        python -u -m mypy . --show-column-numbers
